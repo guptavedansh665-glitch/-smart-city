@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast | Premium Weather Experience</title>
+    <meta name="description" content="A premium weather application with real-time updates and stunning design.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">SkyCast</div>
+            <div class="search-container">
+                <input type="text" id="city-input" placeholder="Search city..." autocomplete="off">
+                <button id="search-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </div>
+        </header>
+
+        <main id="weather-display" class="hidden">
+            <section class="hero-section">
+                <div class="weather-main-info">
+                    <h1 id="city-name">--</h1>
+                    <div class="current-stats">
+                        <span id="current-temp" class="temp">--°</span>
+                        <div class="condition-wrapper">
+                            <span id="weather-condition">--</span>
+                            <span id="temp-range">H: --° L: --°</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weather-visual">
+                    <img id="weather-icon" src="" alt="Weather Icon">
+                </div>
+            </section>
+
+            <section class="details-grid">
+                <div class="detail-card glass">
+                    <span class="label">Humidity</span>
+                    <span id="humidity" class="value">--%</span>
+                </div>
+                <div class="detail-card glass">
+                    <span class="label">Wind Speed</span>
+                    <span id="wind-speed" class="value">-- km/h</span>
+                </div>
+                <div class="detail-card glass">
+                    <span class="label">Feels Like</span>
+                    <span id="feels-like" class="value">--°</span>
+                </div>
+                <div class="detail-card glass">
+                    <span class="label">UV Index</span>
+                    <span id="uv-index" class="value">--</span>
+                </div>
+            </section>
+
+            <section class="forecast-section">
+                <h2>7-Day Forecast</h2>
+                <div id="forecast-container" class="forecast-grid">
+                    <!-- Forecast items will be injected here -->
+                </div>
+            </section>
+        </main>
+
+        <div id="loader" class="loader-container hidden">
+            <div class="spinner"></div>
+        </div>
+
+        <div id="error-message" class="error-container hidden">
+            <p>City not found. Please try again.</p>
+        </div>
+
+        <div id="welcome-message" class="welcome-container">
+            <h2>Welcome to SkyCast</h2>
+            <p>Search for a city to get started.</p>
+        </div>
+    </div>
+
+    <script src="src.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
